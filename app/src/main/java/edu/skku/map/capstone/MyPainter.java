@@ -32,7 +32,7 @@ public class MyPainter extends View {
     //버퍼역할을 담당한다..
     private Path path = new Path();
 
-    private int x,y;
+    private int x, y;
 
     public MyPainter(Context context){
         super(context);
@@ -40,7 +40,6 @@ public class MyPainter extends View {
     public MyPainter(Context context, AttributeSet attributeSet){
         super(context,attributeSet);
     }
-
 
     @Override
     protected void onDraw(Canvas canvas) { // 화면을 그려주는 메서드

@@ -7,7 +7,6 @@ import javax.xml.parsers.ParserConfigurationException;
 import org.xml.sax.SAXException;
 
 class Compute {
-    //private static String path = MainActivity.class.getResource("").getPath();
 
     private enum MeasurementType {
         None, All, Average, BestPerformance
@@ -18,8 +17,8 @@ class Compute {
         xmlGenerator.doubleTap();
         xmlGenerator.dragandDrop();
         this.ComputeTapData("/computedSingleTap.txt", MeasurementType.All);
-        this.ComputeDoubleTapData("/computedDoubleTap.txt", MeasurementType.BestPerformance);
-        this.ComputeSingleTouchDragAndDropData("/computedDragandDrop.txt", MeasurementType.BestPerformance);
+        this.ComputeDoubleTapData("/computedDoubleTap.txt", MeasurementType.All);
+        this.ComputeSingleTouchDragAndDropData("/computedDragandDrop.txt", MeasurementType.All);
     }
 
     private final void ComputeSingleTouchDragAndDropData(String outputFileName, MeasurementType measurementType) throws ParserConfigurationException, SAXException {
@@ -113,8 +112,6 @@ class Compute {
             FileOutputStream fos = new FileOutputStream(new File(MainActivity.foldername + outputFileName));
             OutputStreamWriter osw = new OutputStreamWriter(fos);
             BufferedWriter bw = new BufferedWriter(osw);
-
-            //bw.write("dbltapTime,dbltapTime1,dbltapTime2,dbltapTimeBetween,dbltapAccuracy1,dbltapAccuracy2,dbltapAccuracy\n");
 
             List<TouchAction> actions = TouchIO.ReadFromFile("/DoubleTap.xml");
             if (measurementType == MeasurementType.All) {

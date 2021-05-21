@@ -20,22 +20,18 @@ import java.io.OutputStreamWriter;
 
 public class MyPainter3 extends View {
 
-
     public MyPainter3(Context context) {
         super(context);
     }
+    public MyPainter3(Context context, @Nullable AttributeSet attrs) { super(context, attrs); }
 
-    public MyPainter3(Context context, @Nullable AttributeSet attrs) {
-        super(context, attrs);
-    } String foldername =getContext().getFilesDir().getAbsolutePath() +"/TestLog";
+    String foldername =getContext().getFilesDir().getAbsolutePath() +"/TestLog";
     final static String filename = "DoubleTap.txt";
 
     private Paint paint = new Paint();
-    //여러가지의 그리기 명령을 모았다가 한번에 출력해주는
-    //버퍼역할을 담당한다..
     private Path path = new Path();
 
-    private int x,y;
+    private int x, y;
 
     @Override
     protected void onDraw(Canvas canvas) { // 화면을 그려주는 메서드

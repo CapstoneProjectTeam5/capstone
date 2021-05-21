@@ -32,7 +32,7 @@ public class TouchIO {
 		TouchAction action = new TouchAction();
 		Stroke stroke = new Stroke();
 
-		NodeList TouchList = root.getElementsByTagName("Touch");	// <Touch> �±��� ���� ������
+		NodeList TouchList = root.getElementsByTagName("Touch");
 		Element TouchE;
 		
 		for (int i = 0; i < TouchList.getLength(); i++) {
@@ -55,25 +55,7 @@ public class TouchIO {
 				int stopY = Integer.parseInt(TouchE.getAttributes().getNamedItem("StopTargetY").getNodeValue());               
                 action.StopPoints.add(new Point(stopX, stopY));
             }
-            if (action.Type == TouchActionType.MultiTouchDragAndDrop)
-            {
-            	int startX = Integer.parseInt(TouchE.getAttributes().getNamedItem("StartTargetX1").getNodeValue());
-				int startY = Integer.parseInt(TouchE.getAttributes().getNamedItem("StartTargetY1").getNodeValue());
-				action.StartPoints.add(new Point(startX, startY));
-				
-				startX = Integer.parseInt(TouchE.getAttributes().getNamedItem("StartTargetX2").getNodeValue());
-				startY = Integer.parseInt(TouchE.getAttributes().getNamedItem("StartTargetY2").getNodeValue());
-				action.StartPoints.add(new Point(startX, startY));
-				
-				int stopX = Integer.parseInt(TouchE.getAttributes().getNamedItem("StopTargetX1").getNodeValue());
-				int stopY = Integer.parseInt(TouchE.getAttributes().getNamedItem("StopTargetY1").getNodeValue());                
-                action.StopPoints.add(new Point(stopX, stopY));
-                
-				stopX = Integer.parseInt(TouchE.getAttributes().getNamedItem("StopTargetX2").getNodeValue());
-				stopY = Integer.parseInt(TouchE.getAttributes().getNamedItem("StopTargetY2").getNodeValue());              
-                action.StopPoints.add(new Point(stopX, stopY));
-            }
-            
+
             // <Stroke>
             NodeList StrokeList = TouchE.getElementsByTagName("Stroke");
             Element StrokeE;
@@ -107,8 +89,6 @@ public class TouchIO {
                 return TouchActionType.DoubleTap;
             case "singletouch-draganddrop":
                 return TouchActionType.SingleTouchDragAndDrop;
-            case "multitouch-draganddrop":
-                return TouchActionType.MultiTouchDragAndDrop;
         }
         return TouchActionType.None;
     }

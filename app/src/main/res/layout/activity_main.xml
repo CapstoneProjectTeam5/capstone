@@ -7,14 +7,32 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="36dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="10dp"
-        android:backgroundTint="#ffdd1c"
-        android:text="Next" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/button"
+            android:layout_width="100dp"
+            android:layout_height="36dp"
+            android:layout_gravity="center"
+            android:layout_marginStart="80dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="70dp"
+            android:backgroundTint="#ffdd1c"
+            android:text="Finish" />
+
+        <Button
+            android:id="@+id/button2"
+            android:layout_width="100dp"
+            android:layout_height="37dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="80dp"
+            android:backgroundTint="#ffdd1c"
+            android:text="Next" />
+    </LinearLayout>
 
     <edu.skku.map.capstone.MyPainter
         android:id="@+id/mypainter"

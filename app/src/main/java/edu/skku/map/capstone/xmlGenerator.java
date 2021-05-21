@@ -17,7 +17,6 @@ import javax.xml.transform.dom.DOMSource;
 import javax.xml.transform.stream.StreamResult;
 
 public class xmlGenerator {
-	//private static String path = MainActivity.class.getResource("").getPath();
 
 	public static void singleTap() {
 		// TODO Auto-generated method stub
